@@ -7,7 +7,11 @@
  */
 Ext.define('WFCore.main.MainPanel', {
     extend: 'Ext.container.Viewport',
+//    extend : 'Ext.container.Container',
     layout: 'border',
+    requires : [
+        'WFCore.main.Header'
+    ],
     /*
      * initComponet可以视作初始化方法
      * 派生自ExtJS UI类的子类，都可以通过重载此方法，来进行初始化工作
@@ -15,31 +19,24 @@ Ext.define('WFCore.main.MainPanel', {
      * 例如下面的 html: this.title，这里的title由外接传入
      */
     initComponent: function () {
-//        //左侧导航区域
-//        this.navigatorPanel = Ext.create('YCUI.main.NavigatorPanel', {  // 原本可以写在外面，涉及作用域写 进来
-//            title: '组织结构',
-//            region: 'west',
-//            width: 250,
-//            split: true,
-//            collapsible: true
-//        });
+        //左侧导航区域
+        this.navigatorPanel = Ext.create('WFCore.main.NavigatorPanel', {
+            region: 'west'
+        });
 
-       // this.navigatorPanel.on('moduleSelected', this.moduleSelected, this);  // 绑定事件
+       this.navigatorPanel.on('moduleSelected', this.moduleSelected, this);  // 绑定事件
 
-//        //右侧工作区
-//        this.workspacePanel = Ext.create('YCUI.main.WorkspacePanel', {
-//            region: 'center'
-//        });
+        //右侧工作区
+        this.workspacePanel = Ext.create('WFCore.main.WorkspacePanel', {
+            region: 'center'
+        });
 
         Ext.applyIf(this, {
             items: [{
                 region: 'north',
-                xtype: 'component',
-                padding: 10,
-                height: 40,
-                html: this.title
-            },
-            //    this.navigatorPanel, this.workspacePanel
+                xtype : 'app-header'
+            },this.navigatorPanel
+             ,this.workspacePanel
             ]
         });
 
@@ -52,7 +49,7 @@ Ext.define('WFCore.main.MainPanel', {
     /*
      * 处理模块选中事件，类似监听
      */
-//    moduleSelected: function(params) {
-//        this.workspacePanel.openModule(params.moduleId);
-//    }
+    moduleSelected: function(params) {
+        this.workspacePanel.openModule(params.moduleId);
+    }
 });

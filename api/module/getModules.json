@@ -1,0 +1,7 @@
+{
+    data:
+        [
+            {text: "系统用户管理维护", leaf: true, isModule: true, id: "WFModule.user.UserManager"}
+        ]
+
+}

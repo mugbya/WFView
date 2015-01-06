@@ -6,6 +6,8 @@
 /**
  * Set the configuration for the loader.
  * This should be called right after ext-(debug).js is included in the page, and before Ext.onReady.
+ *
+ * 注意： 某些版本的ext-all 可能没有Loader这个类
  */
 Ext.Loader.setConfig({
     enabled : true,
@@ -27,9 +29,7 @@ Ext.application({
         /**
          * 启动主界面
          */
-        Ext.create('WFCore.main.MainPanel',{
-            title : 'Activiti工作流前端界面示例'
-        });
+        Ext.create('WFCore.main.MainPanel');
     },
 
     /**
