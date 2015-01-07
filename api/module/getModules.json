@@ -1,7 +1,74 @@
-{
-    data:
-        [
-            {text: "系统用户管理维护", leaf: true, isModule: true, id: "WFModule.user.UserManager"}
+[
+    {
+        text: "系统管理",
+        expanded: true,
+        children: [
+            {
+                text: "用户管理",
+                leaf: true,
+                isModule: true,
+                id: "WFModule.user.UserManager"
+            },
+            {
+                text: "角色管理",
+                leaf: true,
+                isModule: true,
+                id: ""
+            },
+            {
+                text : "权限管理",
+                leaf : true,
+                isModule: true,
+                id: ""
+            }
         ]
-
-}
+    },
+    {
+        text : "工作流管理",
+        expanded : true,
+        children:[
+            {
+                text : '启动流程',
+                leaf : true,
+                isModule : true,
+                id : ""
+            },
+            {
+                text : "挂起流程",
+                leaf : true,
+                isModule : true,
+                id : ""
+            },
+            {
+                text : "(强制)结束流程",
+                leaf : true,
+                isModule : true,
+                id : ""
+            }
+        ]
+    },
+    {
+        text : "任务中心",
+        expanded  : true,
+        children : [
+            {
+                text : '流程中心',
+                leaf : true,
+                isModule : true,
+                id : ''
+            },
+            {
+                text : '待签收任务列表',
+                leaf : true,
+                isModule : true,
+                id : ''
+            },
+            {
+                text : "待办理任务列表",
+                leaf : true,
+                isModule : true,
+                id : ""
+            }
+        ]
+    }
+]
