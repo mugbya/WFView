@@ -5,6 +5,7 @@
 Ext.define('WFCore.main.NavigatorPanel',{
     extend : 'Ext.tree.Panel',
     title: '组织结构',
+    rootVisible: false,
     width: 250,
     split: true,
     collapsible: true,
@@ -44,14 +45,14 @@ Ext.define('WFCore.main.NavigatorPanel',{
                  * 这里的url是加载的本地的json数据
                  */
                 url : WFCore.utils.Configuration.getAPI('module.getModules'),
-                reader : {
-                    type : 'json',
-                    root : 'data'
-                }
+//                reader : {
+//                    type : 'json',
+//                    root : 'data'
+//                }
             },
 
             root : {
-                text : 'WFModule',
+                text : '系统管理',
                 expanded : true
             }
         });
