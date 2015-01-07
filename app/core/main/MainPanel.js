@@ -7,7 +7,6 @@
  */
 Ext.define('WFCore.main.MainPanel', {
     extend: 'Ext.container.Viewport',
-//    extend : 'Ext.container.Container',
     layout: 'border',
     requires : [
         'WFCore.main.Header'
@@ -19,6 +18,12 @@ Ext.define('WFCore.main.MainPanel', {
      * 例如下面的 html: this.title，这里的title由外接传入
      */
     initComponent: function () {
+
+        /**
+         * 使能字体图标
+         */
+        Ext.setGlyphFontFamily('FontAwesome');
+
         //左侧导航区域
         this.navigatorPanel = Ext.create('WFCore.main.NavigatorPanel', {
             region: 'west'
@@ -35,8 +40,8 @@ Ext.define('WFCore.main.MainPanel', {
             items: [{
                 region: 'north',
                 xtype : 'app-header'
-            },this.navigatorPanel
-             ,this.workspacePanel
+            },this.navigatorPanel,
+              this.workspacePanel
             ]
         });
 
