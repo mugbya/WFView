@@ -23,7 +23,7 @@ Ext.define('WFCore.main.NavigatorPanel',{
             listeners : {
                 itemclick : function(store, record){
                     if(record.data.isModule == true){
-                        this.fireEvent('moduleSelectd',{
+                        this.fireEvent('moduleSelected',{
                             moduleId : record.data.id
                         });
                     }
@@ -38,17 +38,14 @@ Ext.define('WFCore.main.NavigatorPanel',{
     createStore : function(){
         var store = Ext.create('Ext.data.TreeStore',{
             model : 'WFCore.main.model.Module',
+            alias : 'store.navigation',
             proxy : {
                 type : 'ajax',
 
                 /**
                  * 这里的url是加载的本地的json数据
                  */
-                url : WFCore.utils.Configuration.getAPI('module.getModules'),
-//                reader : {
-//                    type : 'json',
-//                    root : 'data'
-//                }
+                url : WFCore.utils.Configuration.getAPI('module.getModules')
             },
 
             root : {

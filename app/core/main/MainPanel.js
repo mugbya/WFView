@@ -9,7 +9,8 @@ Ext.define('WFCore.main.MainPanel', {
     extend: 'Ext.container.Viewport',
     layout: 'border',
     requires : [
-        'WFCore.main.Header'
+        'WFCore.main.Header',
+        'WFCore.main.NavigatorPanel'
     ],
     /*
      * initComponet可以视作初始化方法
@@ -55,6 +56,7 @@ Ext.define('WFCore.main.MainPanel', {
      * 处理模块选中事件，类似监听
      */
     moduleSelected: function(params) {
+        console.log(params.moduleId);
         this.workspacePanel.openModule(params.moduleId);
     }
 });

@@ -3,7 +3,6 @@
  * @version  2015-01-07
  */
 Ext.define('WFCore.main.Header',{
-//    extend: 'Ext.Container',
     extend : 'Ext.toolbar.Toolbar',
     xtype: 'app-header',
     cls:'app-header',
@@ -12,11 +11,6 @@ Ext.define('WFCore.main.Header',{
     requires : [
         'WFCore.widget.ButtonTransparent'
     ],
-
-//    layout: {
-//        type: 'hbox',
-//        align: 'middle'
-//    },
 
     defaults : {
         xtype : 'buttontransparent'
@@ -39,7 +33,12 @@ Ext.define('WFCore.main.Header',{
                 glyph : 0xf011
     },{
                 text : '设置',
-                glyph : 0xf013
+                glyph : 0xf013,
+                items : [{
+                    text : '颜色'
+                },{
+                    text : '颜色'
+                }]
     }]
 
 });
