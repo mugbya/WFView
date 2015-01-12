@@ -16,7 +16,7 @@ Ext.define('WFCore.common.GridPanel',{
                 xtype : 'gridPagingtoolbar', // 按钮toolbar
                 dock : 'bottom',
                 store : store,
-                //pageSize : this.pageSize
+                pageSize : this.pageSize
             }]
         });
         this.store.load();
@@ -29,7 +29,7 @@ Ext.define('WFCore.common.GridPanel',{
                 type: 'ajax',
                 url: WFCore.utils.Configuration.getAPI(this.api),
                 actionMethods : {
-                    read : 'POST'   // use HTTP POST when making the AJAX request
+                    read : 'GET'   // use HTTP POST when making the AJAX request
                 },
                 reader: {
                     type: 'json',
@@ -45,7 +45,7 @@ Ext.define('WFCore.common.GridPanel',{
              * 更改数据提交的方式，true表示为JSON，false表示为form
              */
             jsonContentType:function(flag){
-                this.proxy.actionMethods.read="POST"
+                this.proxy.actionMethods.read="GET"
                 if(flag){
                     this.proxy.headers={
                         'Content-Type': "application/json;charset=utf-8",
