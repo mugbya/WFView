@@ -30,6 +30,9 @@ Ext.define('WFModule.user.UserManager', {
             region: 'center',
             dataModel: 'WFModule.user.model.UserModel',
             api: 'user.getUsers',
+            pageSize : 10,
+            frame : true,
+            forceFit : true,
             columns: [
                 {
                     text: '姓名',
