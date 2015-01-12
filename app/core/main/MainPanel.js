@@ -56,7 +56,6 @@ Ext.define('WFCore.main.MainPanel', {
      * 处理模块选中事件，类似监听
      */
     moduleSelected: function(params) {
-        console.log(params.moduleId);
         this.workspacePanel.openModule(params.moduleId);
     }
 });

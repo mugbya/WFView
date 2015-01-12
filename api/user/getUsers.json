@@ -1,0 +1,10 @@
+{
+    'data': [
+        { 'id': '1', 'name': 'admin',  "email":"lisa@simpsons.com",  "phone":"555-111-1224","rolename":"管理员","deptname":"信息技术部"},
+        { 'id': '2', 'name': 'kaka',  "email":"Bsty@simpsons.com",  "phone":"555-222-1224","rolename":"部门经理","deptname":"信息技术部"},
+        { 'id': '3', 'name': 'pia',  "email":"Homer@simpsons.com",  "phone":"555-333-1224","rolename":"中心柜员","deptname":"业务一部"},
+        { 'id': '4', 'name': 'wowo',  "email":"Homer@simpsons.com",  "phone":"555-333-1224","rolename":"副总裁","deptname":"业务二部"},
+        { 'id': '5', 'name': '佚名',  "email":"Marge@simpsons.com",  "phone":"555-444-1224","rolename":"董事长","deptname":"××××××××"}
+
+    ]
+}

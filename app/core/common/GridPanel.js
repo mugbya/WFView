@@ -3,7 +3,7 @@
  * @version  2015-01-08
  */
 Ext.define('WFCore.common.GridPanel',{
-    extend : 'Ext.gird.Panel',
+    extend : 'Ext.grid.Panel',
     layout: 'border',
     initComponent: function () {
         var store = this.createStore();
@@ -18,10 +18,10 @@ Ext.define('WFCore.common.GridPanel',{
             model: this.dataModel,
             proxy: {
                 type: 'ajax',
-                url: YCUI.utils.Configuration.getAPI(this.api),
+                url: WFCore.utils.Configuration.getAPI(this.api),
                 reader: {
                     type: 'json',
-                    rootProperty: 'result'
+                    rootProperty: 'data'
                 }
             }
         });
